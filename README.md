@@ -9,14 +9,16 @@ Implement from scratch an Angular 7+ application using the material theme, which
 -   pass
     See an example here: http://localhost:8080/#/register
 
-2. As an admin user(no need to be created, credential admin/admin), I can see all the partking places and I can:
+2. As an anonymous user I can perform a user login. After login based on the user role, I can be identified as regular user or admin. 
+
+3. As an admin user(no need to be created, credential admin/admin), I can see all the partking places and I can:
 
 -   add and edit inline the parking places(dirrectly on the table rows)
 -   remove parking places
 -   filter to see only the parking places without date out
 -   sort by date in
 
-3. As a regular user, I can checkin or checkout from the parking.
+4. As a regular user, I can checkin or checkout from the parking.
 
 There is no need to implement any line of code on the backed.
 All the needed REST API are already implemented and you can access them by:
