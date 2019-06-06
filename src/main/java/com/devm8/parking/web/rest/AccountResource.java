@@ -52,6 +52,7 @@ public class AccountResource {
      * @throws EmailAlreadyUsedException 400 (Bad Request) if the email is already used
      * @throws LoginAlreadyUsedException 400 (Bad Request) if the login is already used
      */
+    @CrossOrigin
     @PostMapping("/register")
     @ResponseStatus(HttpStatus.CREATED)
     public void registerAccount(@Valid @RequestBody ManagedUserVM managedUserVM) {
@@ -68,6 +69,7 @@ public class AccountResource {
      * @param key the activation key
      * @throws RuntimeException 500 (Internal Server Error) if the user couldn't be activated
      */
+    @CrossOrigin
     @GetMapping("/activate")
     public void activateAccount(@RequestParam(value = "key") String key) {
         Optional<User> user = userService.activateRegistration(key);
@@ -82,6 +84,7 @@ public class AccountResource {
      * @param request the HTTP request
      * @return the login if the user is authenticated
      */
+    @CrossOrigin
     @GetMapping("/authenticate")
     public String isAuthenticated(HttpServletRequest request) {
         log.debug("REST request to check if the current user is authenticated");
@@ -94,6 +97,7 @@ public class AccountResource {
      * @return the current user
      * @throws RuntimeException 500 (Internal Server Error) if the user couldn't be returned
      */
+    @CrossOrigin
     @GetMapping("/account")
     public UserDTO getAccount() {
         return userService.getUserWithAuthorities()
@@ -108,6 +112,7 @@ public class AccountResource {
      * @throws EmailAlreadyUsedException 400 (Bad Request) if the email is already used
      * @throws RuntimeException 500 (Internal Server Error) if the user login wasn't found
      */
+    @CrossOrigin
     @PostMapping("/account")
     public void saveAccount(@Valid @RequestBody UserDTO userDTO) {
         String userLogin = SecurityUtils.getCurrentUserLogin().orElseThrow(() -> new InternalServerErrorException("Current user login not found"));
@@ -129,6 +134,7 @@ public class AccountResource {
      * @param passwordChangeDto current and new password
      * @throws InvalidPasswordException 400 (Bad Request) if the new password is incorrect
      */
+    @CrossOrigin
     @PostMapping(path = "/account/change-password")
     public void changePassword(@RequestBody PasswordChangeDTO passwordChangeDto) {
         if (!checkPasswordLength(passwordChangeDto.getNewPassword())) {

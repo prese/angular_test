@@ -1,0 +1,23 @@
+{
+    "parkingApp": {
+        "parkingPlace": {
+            "home": {
+                "title": "Parking Places",
+                "createLabel": "Create a new Parking Place",
+                "createOrEditLabel": "Create or edit a Parking Place"
+            },
+            "created": "A new Parking Place is created with identifier {{ param }}",
+            "updated": "A Parking Place is updated with identifier {{ param }}",
+            "deleted": "A Parking Place is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Parking Place {{ id }}?"
+            },
+            "detail": {
+                "title": "Parking Place"
+            },
+            "dateIn": "Date In",
+            "dateOut": "Date Out",
+            "user": "User"
+        }
+    }
+}

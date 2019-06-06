@@ -1,0 +1,23 @@
+{
+    "parkingApp": {
+        "parkingPlace": {
+            "home": {
+                "title": "Parking Places",
+                "createLabel": "Creeare o nouă entitate Parking Place",
+                "createOrEditLabel": "Creeare sau editare Parking Place"
+            },
+            "created": "A fost creată o nouă entitate Parking Place cu identificatorul {{ param }}",
+            "updated": "Parking Place cu identificatorul {{ param }} a fost actualizată",
+            "deleted": "Parking Place cu identificatorul {{ param }} a fost ștearsă",
+            "delete": {
+                "question": "Sunteți sigur că doriți să ștergeți Parking Place {{ id }}?"
+            },
+            "detail": {
+                "title": "Parking Place"
+            },
+            "dateIn": "Date In",
+            "dateOut": "Date Out",
+            "user": "User"
+        }
+    }
+}

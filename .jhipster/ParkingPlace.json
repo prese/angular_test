@@ -1,0 +1,31 @@
+{
+    "name": "ParkingPlace",
+    "fields": [
+        {
+            "fieldName": "dateIn",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "dateOut",
+            "fieldType": "ZonedDateTime"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "user",
+            "otherEntityRelationshipName": "parkingPlace",
+            "relationshipName": "user",
+            "otherEntityField": "login"
+        }
+    ],
+    "changelogDate": "20190606060730",
+    "entityTableName": "parking_place",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

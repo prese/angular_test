@@ -33,6 +33,7 @@ public class UserJWTController {
         this.authenticationManager = authenticationManager;
     }
 
+    @CrossOrigin
     @PostMapping("/authenticate")
     public ResponseEntity<JWTToken> authorize(@Valid @RequestBody LoginVM loginVM) {
 

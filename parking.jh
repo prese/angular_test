@@ -1,0 +1,16 @@
+
+entity ParkingPlace {
+	dateIn ZonedDateTime
+    dateOut ZonedDateTime
+
+}
+
+
+relationship ManyToOne {
+    ParkingPlace{user(login)} to User
+}
+
+dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl

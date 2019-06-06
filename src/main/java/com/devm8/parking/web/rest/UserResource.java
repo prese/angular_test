@@ -84,6 +84,7 @@ public class UserResource {
      * @throws URISyntaxException if the Location URI syntax is incorrect
      * @throws BadRequestAlertException 400 (Bad Request) if the login or email is already in use
      */
+    @CrossOrigin
     @PostMapping("/users")
     @PreAuthorize("hasRole(\"" + AuthoritiesConstants.ADMIN + "\")")
     public ResponseEntity<User> createUser(@Valid @RequestBody UserDTO userDTO) throws URISyntaxException {
@@ -113,6 +114,7 @@ public class UserResource {
      * @throws EmailAlreadyUsedException 400 (Bad Request) if the email is already in use
      * @throws LoginAlreadyUsedException 400 (Bad Request) if the login is already in use
      */
+    @CrossOrigin
     @PutMapping("/users")
     @PreAuthorize("hasRole(\"" + AuthoritiesConstants.ADMIN + "\")")
     public ResponseEntity<UserDTO> updateUser(@Valid @RequestBody UserDTO userDTO) {
@@ -137,6 +139,7 @@ public class UserResource {
      * @param pageable the pagination information
      * @return the ResponseEntity with status 200 (OK) and with body all users
      */
+    @CrossOrigin
     @GetMapping("/users")
     public ResponseEntity<List<UserDTO>> getAllUsers(Pageable pageable) {
         final Page<UserDTO> page = userService.getAllManagedUsers(pageable);
@@ -147,6 +150,7 @@ public class UserResource {
     /**
      * @return a string list of the all of the roles
      */
+    @CrossOrigin
     @GetMapping("/users/authorities")
     @PreAuthorize("hasRole(\"" + AuthoritiesConstants.ADMIN + "\")")
     public List<String> getAuthorities() {
@@ -159,6 +163,7 @@ public class UserResource {
      * @param login the login of the user to find
      * @return the ResponseEntity with status 200 (OK) and with body the "login" user, or with status 404 (Not Found)
      */
+    @CrossOrigin
     @GetMapping("/users/{login:" + Constants.LOGIN_REGEX + "}")
     public ResponseEntity<UserDTO> getUser(@PathVariable String login) {
         log.debug("REST request to get User : {}", login);
@@ -173,6 +178,7 @@ public class UserResource {
      * @param login the login of the user to delete
      * @return the ResponseEntity with status 200 (OK)
      */
+    @CrossOrigin
     @DeleteMapping("/users/{login:" + Constants.LOGIN_REGEX + "}")
     @PreAuthorize("hasRole(\"" + AuthoritiesConstants.ADMIN + "\")")
     public ResponseEntity<Void> deleteUser(@PathVariable String login) {

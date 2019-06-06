@@ -1,0 +1,35 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="parkingPlace">
+            <h2><span jhiTranslate="parkingApp.parkingPlace.detail.title">Parking Place</span> {{parkingPlace.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="parkingApp.parkingPlace.dateIn">Date In</span></dt>
+                <dd>
+                    <span>{{parkingPlace.dateIn}}</span>
+                </dd>
+                <dt><span jhiTranslate="parkingApp.parkingPlace.dateOut">Date Out</span></dt>
+                <dd>
+                    <span>{{parkingPlace.dateOut}}</span>
+                </dd>
+                <dt><span jhiTranslate="parkingApp.parkingPlace.user">User</span></dt>
+                <dd>
+                    {{parkingPlace.userLogin}}
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/parking-place', parkingPlace.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
